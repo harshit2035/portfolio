@@ -7,7 +7,8 @@ import { CodeSphere } from "./CodeSphere";
 export function Scene3D() {
   return (
     <div className="w-full h-full rounded-xl overflow-hidden">
-      <Canvas>
+      <Canvas dpr={[1, 2]} gl={{ antialias: true }}>
+        <color attach="background" args={['transparent']} />
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
