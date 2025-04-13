@@ -6,7 +6,8 @@ import * as THREE from "three";
 
 export function CodeSphere() {
   const sphereRef = useRef<THREE.Mesh>(null);
-  const materialRef = useRef<THREE.Material>(null);
+  // Fix the material ref type to use any since the specific type is complex
+  const materialRef = useRef<any>(null);
   
   // Rotate sphere on frame update
   useFrame((state) => {
@@ -17,7 +18,7 @@ export function CodeSphere() {
     }
     
     if (materialRef.current) {
-      (materialRef.current as any).distort = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2 + 0.4;
+      materialRef.current.distort = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2 + 0.4;
     }
   });
 
