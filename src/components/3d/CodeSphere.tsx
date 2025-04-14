@@ -1,15 +1,11 @@
 
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Sphere, useTexture } from "@react-three/drei";
+import { Sphere } from "@react-three/drei";
 import * as THREE from "three";
 
 export function CodeSphere() {
   const sphereRef = useRef<THREE.Mesh>(null);
-  
-  // Load texture - replace 'placeholder.svg' with your uploaded image path
-  // For example: '/uploads/your-image.jpg'
-  const texture = useTexture('/placeholder.svg');
   
   // Rotate sphere on frame update
   useFrame((state) => {
@@ -23,9 +19,9 @@ export function CodeSphere() {
   return (
     <Sphere args={[1, 64, 64]} ref={sphereRef}>
       <meshStandardMaterial 
-        map={texture}
-        metalness={0.4}
-        roughness={0.6}
+        color="#4285f4"
+        metalness={0.8}
+        roughness={0.2}
       />
     </Sphere>
   );
