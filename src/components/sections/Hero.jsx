@@ -54,7 +54,13 @@ export function Hero() {
             <div className="relative h-full">
               <div className="w-full aspect-square rounded-full bg-gradient-to-br from-primary/20 to-accent/20 absolute -z-10 top-0 right-0 blur-xl animate-pulse-slow"></div>
               <div className="flex items-center justify-center h-full">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary to-accent shadow-lg animate-pulse-slow"></div>
+                <div className="relative w-64 h-64 overflow-hidden rounded-full border-4 border-primary/20 shadow-xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                    alt="Portfolio Image" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
