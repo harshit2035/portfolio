@@ -5,7 +5,7 @@ import { Sphere } from "@react-three/drei";
 import * as THREE from "three";
 
 export function CodeSphere() {
-  const sphereRef = useRef<THREE.Mesh>(null);
+  const sphereRef = useRef(null);
   
   // Rotate sphere on frame update
   useFrame((state) => {
